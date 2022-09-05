@@ -1,0 +1,77 @@
+a {
+  /* Default Settings */
+  position: relative;
+  font: normal normal bold 0.93vw/1.45vw $font_oswald;
+  padding: 0.57vw 1.51vw;
+  text-align: center;
+  letter-spacing: 0.009vw;
+  background: $bg_color;
+  color: $color-dark;
+  text-transform: uppercase;
+  /* Hover/Active */
+  &:hover,
+  &:active {
+    animation: pulse 1s;
+    box-shadow: 0 0 0 1em transparent;
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 $color_6;
+      }
+    }
+  }
+  /* After */
+  &:after {
+    @include content-block;
+    height: 100%;
+    width: 15.5%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    background: $bg_color;
+  }
+  /* Red Button */
+  &.danger {
+    background: $color_2;
+    color: $bg_color;
+    &:hover,
+    &:active {
+      animation: pulse-danger 1s;
+      @keyframes pulse-danger {
+        0% {
+          box-shadow: 0 0 0 0 $color_2;
+        }
+      }
+    }
+    &::after {
+      background: $color_3;
+    }
+  }
+  /* White Button */
+  &.success {
+    background: $color_6;
+    color: $color_7;
+    &:hover,
+    &:active {
+      animation: pulse-success 1s;
+      @keyframes pulse-success {
+        0% {
+          box-shadow: 0 0 0 0 $color_6;
+        }
+      }
+    }
+    &::after {
+      background: $color_6;
+    }
+  }
+  @media #{$xxl_device} {
+    font-size: 1.27vw;
+    line-height: unset;
+    padding: 1vw 2.5vw;
+  }
+  @media #{$md_device} {
+    font-size: 16px;
+    line-height: unset;
+    padding: 8px 22px;
+  }
+}

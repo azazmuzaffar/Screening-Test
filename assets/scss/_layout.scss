@@ -1,0 +1,197 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+
+  /* Each Box */
+  .box {
+    position: relative;
+    &::after {
+      @include content-block;
+    }
+
+    /* Squares */
+    &.box-1,
+    &.box-3,
+    &.box-4,
+    &.box-5,
+    &.box-6,
+    &.box-7,
+    &.box-8,
+    &.box-10 {
+      flex: 1 0 25%;
+      &::after {
+        padding-bottom: 100%;
+      }
+    }
+
+    /* Rectangle */
+    &.box-2,
+    &.box-9 {
+      flex: 1 0 50%;
+      &::after {
+        padding-bottom: 50%;
+      }
+    }
+
+    /* Box 1 & 8 > Triangles */
+    &.box-1,
+    &.box-8 {
+      display: flex;
+      flex-wrap: nowrap;
+      .triangle {
+        background: $color_2;
+        @include triangle;
+      }
+    }
+
+    /* Box 1 > Triangle */
+    &.box-1 {
+      background: $bg_color;
+      .triangle {
+        top: 16.25%;
+        min-width: 33.33%;
+        max-height: 66.5%;
+      }
+    }
+
+    /* Box 8 > Triangles */
+    &.box-8 {
+      background: $color_1;
+      .triangle {
+        min-width: 50%;
+      }
+    }
+
+    /* Box 2 & 9 > Text Content */
+    &.box-2,
+    &.box-9 {
+      position: relative;
+      /* Text Content */
+      .txt-content {
+        padding: 4.16vw;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        overflow-y: auto;
+      }
+    }
+
+    /* Box 2 > Bottom Right Triangle */
+    &.box-2 {
+      background: $bg_color;
+      &::before {
+        @include content-block;
+        width: 50%;
+        height: 100%;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: linear-gradient(to right bottom, transparent 50%, $color_2 50%);
+      }
+    }
+
+    /* Box 9 > Bottom Border */
+    &.box-9 {
+      background: $color_5;
+      border-bottom: 5px solid $color_4;
+      color: $bg_color;
+    }
+
+    /* Box 3,4,6 & 7 > Bg & (Triangle Gradients) */
+    &.box-3 {
+      background: $bg_color;
+    }
+    &.box-4 {
+      background: linear-gradient(to right bottom, $bg_color 50%, $color_2 50%);
+    }
+    &.box-6 {
+      background: linear-gradient(to right bottom, $color_1 50%, $color_2 50%);
+    }
+    &.box-7 {
+      background: linear-gradient(to right bottom, $color_2 50%, $bg_color 50%);
+    }
+
+    /* Box 5 & 10 > Bg Images */
+    &.box-5 {
+      background-image: url("../images/1.png");
+      @include bg-image-cover-center;
+    }
+    &.box-10 {
+      background-image: url("../images/2.png");
+      @include bg-image-cover-center;
+    }
+  }
+}
+
+/* 1400px */
+@media #{$xxl_device} {
+  .container {
+    .box {
+      /* Squares */
+      &.box-1,
+      &.box-5,
+      &.box-6,
+      &.box-7,
+      &.box-10 {
+        flex: 1 0 33.33%;
+      }
+
+      /* Rectangle */
+      &.box-2,
+      &.box-9 {
+        flex: 1 0 66.66%;
+      }
+
+      /* Hide */
+      &.box-3,
+      &.box-4,
+      &.box-8 {
+        display: none;
+      }
+    }
+  }
+}
+
+/* 767px */
+@media #{$md_device} {
+  .container {
+    display: block;
+
+    .box {
+      &::after {
+        padding-bottom: 100%;
+      }
+
+      /* Rectangle */
+      &.box-2,
+      &.box-9 {
+        .txt-content {
+          position: relative;
+          padding: 30px 20px 40px 20px;
+          h2,
+          p {
+            br {
+              display: none;
+            }
+          }
+        }
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+
+      /* Hide */
+      &.box-1,
+      &.box-6,
+      &.box-7 {
+        display: none;
+      }
+    }
+  }
+}

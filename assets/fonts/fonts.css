@@ -1,0 +1,26 @@
+/* Oswald - Bold */
+@font-face {
+  font-family: "Oswald";
+  src: url("Oswald-Bold.woff2") format("woff2"), url("Oswald-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bitter - Bold */
+@font-face {
+  font-family: "Bitter";
+  src: url("Bitter-Bold.woff2") format("woff2"), url("Bitter-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bitter - Regular */
+@font-face {
+  font-family: "Bitter";
+  src: url("Bitter-Regular.woff2") format("woff2"), url("Bitter-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

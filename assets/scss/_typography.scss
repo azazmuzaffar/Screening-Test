@@ -1,0 +1,32 @@
+h2 {
+  font: normal normal bold 2.08vw/2.5vw $font_bitter;
+  margin-bottom: 1.56vw;
+}
+p {
+  font: normal normal normal 0.93vw/1.55vw $font_bitter;
+  margin-bottom: 2.6vw;
+}
+
+/* 1400px */
+@media #{$xxl_device} {
+  h2 {
+    font: normal normal bold 2.85vw/3.43vw $font_bitter;
+    margin-bottom: 2.36vw;
+  }
+  p {
+    font: normal normal normal 1.27vw/2.1vw $font_bitter;
+    margin-bottom: 3.94vw;
+  }
+}
+
+/* 767px */
+@media #{$md_device} {
+  h2 {
+    font: normal normal bold 24px/30px $font_bitter;
+    margin-bottom: 15px;
+  }
+  p {
+    font: normal normal normal 16px/24px $font_bitter;
+    margin-bottom: 30px;
+  }
+}

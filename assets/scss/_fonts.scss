@@ -1,0 +1,31 @@
+/* Importing fonts */
+/* Oswald - Bold */
+@font-face {
+  font-family: "Oswald";
+  src: url("../fonts/Oswald-Bold.woff2") format("woff2"), url("../fonts/Oswald-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bitter - Bold */
+@font-face {
+  font-family: "Bitter";
+  src: url("../fonts/Bitter-Bold.woff2") format("woff2"), url("../fonts/Bitter-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bitter - Regular */
+@font-face {
+  font-family: "Bitter";
+  src: url("../fonts/Bitter-Regular.woff2") format("woff2"), url("../fonts/Bitter-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Setting up font variables*/
+$font_bitter: "Bitter";
+$font_oswald: "Oswald";
